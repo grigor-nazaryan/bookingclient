@@ -47,7 +47,7 @@ const SignUp = () => {
 		try {
 			dispatch(signUpStart());
 
-			const res = await axios.post("/api/auth/register", form);
+			const res = await axios.post("/api/auth/register", form, { withCredentials: true });
 			const data = res.data;
 			const { user } = data.data;
 

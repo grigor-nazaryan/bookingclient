@@ -19,7 +19,7 @@ export default function Header() {
 		try {
 			console.log("token: ", token);
 
-			const res = await axios.post('/api/auth/logout', {});
+			const res = await axios.post('/api/auth/logout', {}, { withCredentials: true });
 
 			console.log("res: ", res);
 			const data = res.data;

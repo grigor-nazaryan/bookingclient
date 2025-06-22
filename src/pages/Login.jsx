@@ -45,7 +45,7 @@ const Login = () => {
 		try {
 			dispatch(loginStart());
 
-			const res = await axios.post("/api/auth/login", formData);
+			const res = await axios.post("/api/auth/login", formData, { withCredentials: true });
 			const data = res.data;
 			console.log("data: ", data);
 

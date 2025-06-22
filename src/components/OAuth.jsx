@@ -19,7 +19,7 @@ export default function OAuth() {
 			if (resultsFromGoogle.user) {
 				const { displayName, email } = resultsFromGoogle.user;
 
-				const res = await axios.post("/api/auth/google", { displayName, email });
+				const res = await axios.post("/api/auth/google", { displayName, email }, { withCredentials: true });
 				const data = await res.data;
 
 				if (data.status !== 200) {
@@ -43,7 +43,7 @@ export default function OAuth() {
 	};
 	return (
 		<Button type='button' gradientDuoTone='blueToGreen' onClick={handleGoogleClick} className='flex items-center justify-center space-x-8 p-2 rounded-md shadow-md bg-white text-gray-700 hover:bg-gray-100 border-2 border-gray-300 text-lg'>
-			<img src="/icons/icons8-google-480.svg" alt="Google Icon" className='w-12 h-7' />
+			<img src="images/icons8-google-480.svg" alt="Google Icon" className='w-12 h-7' />
 			<span className='text-xl'>Sign in with Google</span>
 		</Button>
 	);

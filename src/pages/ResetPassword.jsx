@@ -53,7 +53,7 @@ const ResetPassword = () => {
 		try {
 			dispatch(resetPasswordStart());
 
-			const res = await axios.post(`/api/auth/reset-password/${token}`, form);
+			const res = await axios.post(`/api/auth/reset-password/${token}`, form, { withCredentials: true });
 			const data = res.data;
 			console.log("data: ", data);
 
