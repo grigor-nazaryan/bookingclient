@@ -6,8 +6,8 @@ export default defineConfig({
 	server: {
 		proxy: {
 			"/api": {
-				target: process.env.VITE_API_URL || "http://localhost:4000",
-				secure: process.env.NODE_ENV === 'production'
+				target: "https://bookingserver-096g.onrender.com",
+				secure: true
 			}
 		}
 	},
